@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Midnight Breach Survey Form</title>
+  </head>
+   
+  <body>
+    <h1 id="title">Midnight Breach Survey Form</h1>
+    <p id="description">
+      You are the lead SOC analyst on duty. A critical security alert has been triggered at 02:13 AM.</p>
+      <p>Complete the investigation report.</p>
+
+      <form id="survey-form">
+
+        <fieldset>
+          <legend>Analyst Information</legend>
+          <label id="name-label" for="name">Analyst Name</label><br/>
+          <input type="text" id="name" name="name" placeholder="Enter Your Analyst Name" required><br/><br/>
+
+          <label id="email-label" for="email">Contact Email</label><br/>
+          <input type="email" id="email" name="email" placeholder="Enter Your Email" required><br/><br/>
+
+          <label id="number-label" for="number">Years of Cybersecurity Experience</label><br/>
+          <input type="number" id="number" name="number" min="0" max="40" placeholder="0 - 40" required>
+        </fieldset><br/>
+
+        <fieldset>
+          <legend>Incident Alert</legend>
+
+          <p>AlERT ID: SOC-2026-041</p>
+          <p>3,842 failed login attempts detected with 7 minutes.</p>
+          <p>Source IP: 185.91.xxx.xxx</p>
+          <p>Target Asset: Finance Server</p>
+
+          <label for="dropdown">Initial Severity Assessment</label><br/>
+          <select id="dropdown" name="severity">
+            <option value="disabled selected">Select Severity Level</option>
+            <option value="low">Low Severity</option>
+            <option value="medium">Medium Severity</option>
+            <option value="high">High Severity</option>
+            <option value="critical">Critical Severity</option>          
+            </select>
+          </fieldset><br/>
+
+          <fieldset>
+            <legend>Immediate Response</legend>
+            <p>What would be your first action?</p> 
+            <label for="monitor">
+              <input type="radio" id="monitor" name="response" value="monitor">Continue Monitoring</label><br/><br/>
+
+            <label for="investigate">
+              <input type="radio" id="investigat" name="response" value="investigate">Investigate Logs</label><br/><br/>
+
+            <label for="isolate">
+              <input type="radio" id="isolate" name="response" value="isolate">Isolate Affected Server</label><br/><br/>
+
+              <label for="escalate">
+                <input type="radio" id="escalate" name="response" value="escalate">Escalate to Incident Response Team</label>
+          </fieldset><br/>
+
+          <fieldset>
+            <legend>Evidance Collection</legend>
+            <p>Select the evidance sources you would examine.</p>
+
+            <label for="siem">
+              <input type="checkbox" id="siem"
+              name="evidance" value="siem">SIEM Alerts</label><br/><br/>
+
+            <label for="firewall">
+              <input type="checkbox" id="firewall" name="evidance" value="firewall">Firewall Logs 
+              </label><br/><br/>
+
+              
+            <label for="endpoint">
+              <input type="checkbox" id="endpoint" name="evidance" value="endpoint">Endpoint Activity
+              </label><br/><br/>
+
+              
+            <label for="cloud">
+              <input type="checkbox" id="cloud" name="evidance" value="cloud">Cloud Audit Logs 
+              </label><br/><br/>
+
+              
+            <label for="threat">
+              <input type="checkbox" id="threat" name="evidance" value="threat">Threat Intelligence Feed 
+              </label><br/><br/>
+
+              
+            <label for="dns">
+              <input type="checkbox" id="dns" name="evidance" value="dns">DNS Records 
+              </label>
+
+          </fieldset><br/>
+
+          <fieldset>
+            <legend>Investigation Update</legend>
+            <p>UPDATE: The attacker successfully authenticated using valid employee credentials.</p>
+            <p>What does this most likely indicate?</p>
+
+             <label for="credential">
+              <input type="radio" id="credential" name="cause" value="credential-theft">CredentialTheft</label><br/><br/>
+
+               <label for="misconfiguration">
+              <input type="radio" id="misconfiguration" name="cause" value="misconfiguration">Misconfiguration</label><br/><br/>
+
+               <label for="insider">
+              <input type="radio" id="insider" name="cause" value="insider-threat">Insider threat</label><br/><br/>
+
+               <label for="unknown">
+              <input type="radio" id="unknown" name="cause" value="unknown">Unknown</label>
+
+          </fielset><br/><br/>
+
+          <fieldset>
+            <legend>Final Incident Report</legend>
+            <label for="comments">Write your findings and recommendations</label><br/><br/>
+            <textarea id="comments" name="report" rows="8" cols="60" placeholder="Root cause, impact, containment action, and recommendations...."></textarea>
+          </fieldset><br/>
+
+          <button id="submit" type="submit">Submit Final Incident Report</button>
+
+        </form>
+  </body>
+</html>
